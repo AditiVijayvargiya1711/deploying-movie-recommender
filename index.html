@@ -11,7 +11,7 @@
 <body>
 <div id="main">
 <div id="heading">Movie Recommender System!!!</div><hr>
-<div>Let us know how to contact you?</div><br>
+<div>Let us know what you prefer?</div><br>
 <input id="movie" placeholder="Enter movie, Ex.: Aliens , Home , Ri¢hie Ri¢h etc.">
 <button onclick="getRecommendations()">Recommend</button>
 
@@ -51,7 +51,7 @@ async function getRecommendations() {
   const data = await res.json();
 
   const box = document.getElementById("output");
-  box.innerHTML = "Loading recommendations...";
+  box.innerHTML = "Wait we are trying to fetch posters...";
 
   // Fetch posters in parallel (FAST)
   const posters = await Promise.all(
@@ -83,6 +83,7 @@ async function getRecommendations() {
 </html>
 
 <!--uvicorn api:app --host 0.0.0.0 --port $PORT-->
+
 
 
 
