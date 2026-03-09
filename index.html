@@ -51,7 +51,7 @@ async function getRecommendations() {
   const data = await res.json();
 
   const box = document.getElementById("output");
-  box.innerHTML = "Wait, we are trying to fetch posters...";
+  box.innerHTML = "Wait while we recommend, we are trying to fetch posters...";
 
   // Fetch posters in parallel (FAST)
   const posters = await Promise.all(
@@ -83,6 +83,7 @@ async function getRecommendations() {
 </html>
 
 <!--uvicorn api:app --host 0.0.0.0 --port $PORT-->
+
 
 
 
