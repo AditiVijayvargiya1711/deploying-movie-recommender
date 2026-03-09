@@ -19,10 +19,11 @@
 </div>
 
 <script>
-const TMDB_KEY = "415510d87ce78e8a9a2f04ee118af6d2"; 
+
 
 
 async function fetchPoster(title) {
+  const TMDB_KEY = "415510d87ce78e8a9a2f04ee118af6d2"; 
   const res = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${TMDB_KEY}&query=${encodeURIComponent(title)}`);
   const data = await res.json();
   if (data.results.length > 0 && data.results[0].poster_path) {
@@ -54,6 +55,7 @@ async function getRecommendations() {
 </html>
 
 <!--uvicorn api:app --host 0.0.0.0 --port $PORT-->
+
 
 
 
